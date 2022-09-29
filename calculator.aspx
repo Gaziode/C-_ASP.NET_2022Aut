@@ -28,7 +28,10 @@
             <asp:Button ID="Button4" runat="server" Text="+" OnClick="btn_plus" Width="60px" />
             <asp:Button ID="Button5" runat="server" Text="-" OnClick="btn_minus" Width="60px" />
             <asp:Button ID="Button6" runat="server" Text="=" OnClick="btn_equal" Width="60px" />
+            
         </p>
+        <asp:Button ID="Button8" runat="server" Text="." OnClick="btn_dot" Width="60px" />
+        <asp:Button ID="Button9" runat="server" Text="x^2" OnClick="btn_sqaure" Width="60px" />
         <asp:Button ID="Button7" runat="server" Text="clear" OnClick="btn_clear" Width="60px" />
     </form>
 </body>
