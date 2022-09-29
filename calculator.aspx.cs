@@ -10,10 +10,10 @@ public partial class Default : System.Web.UI.Page
 {
     string p1;
     string p2;
-    static int i1=1;
-    static int i2=3;
-    static int sign=0;
-    static int ans=0;
+    static double i1 = 0;
+    static double i2 = 0;
+    static double sign = 0;
+    static double ans = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -30,10 +30,23 @@ public partial class Default : System.Web.UI.Page
     {
         TextBox1.Text += "3";
     }
+
+    protected void btn_dot(object sender, EventArgs e)
+    {
+        TextBox1.Text += ".";
+    }
+
+    protected void btn_sqaure(object sender, EventArgs e)
+    {
+        p1 = TextBox1.Text;
+        i1 = Double.Parse(p1);
+        ans = i1*i1;
+        TextBox1.Text = Convert.ToString(ans);
+    }
     protected void btn_plus(object sender, EventArgs e)
     {
         p1 = TextBox1.Text;
-        i1 = Int32.Parse(p1);
+        i1 = Double.Parse(p1);
         sign = 1;
         TextBox1.Text = "";
         l1.Text = p1;
@@ -43,7 +56,7 @@ public partial class Default : System.Web.UI.Page
     protected void btn_minus(object sender, EventArgs e)
     {
         p1 = TextBox1.Text;
-        i1 = Int32.Parse(p1);
+        i1 = Double.Parse(p1);
         sign = 2;
         TextBox1.Text = "";
         l1.Text = p1;
@@ -52,10 +65,8 @@ public partial class Default : System.Web.UI.Page
     protected void btn_equal(object sender, EventArgs e)
     {
         p2 = TextBox1.Text;
-        i2 = Int32.Parse(p2);
+        i2 = Double.Parse(p2);
         l2.Text = p2;
-        ans = i1 + i2;
-        int ans2 = i1 - i2;
         l1.Text = Convert.ToString(i1);
         l2.Text = Convert.ToString(i2);
         if (sign == 1)
@@ -77,11 +88,11 @@ public partial class Default : System.Web.UI.Page
 
     protected void btn_clear(object sender, EventArgs e)
     {
-        p1="";
-        p2="";
+        p1 = "";
+        p2 = "";
         i1 = 0;
         i2 = 0;
-        sign=1;
+        sign = 1;
         ans = 0;
         l1.Text = "";
         l2.Text = "";
@@ -90,4 +101,3 @@ public partial class Default : System.Web.UI.Page
         TextBox1.Text = "";
     }
 }
-
